@@ -1,11 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import Aux from '/client/hoc/Aux/Aux'
 import RegistrationModal from './RegistrationModal/RegistrationModal'
-import LoginModal from './LoginModal/LoginModal'
-
 const topBar = ({context}) => {
-  const { locStrings } = context.props
+  const { locStrings, authenticated } = context.props
 
   return (
     <Aux>
@@ -23,10 +22,18 @@ const topBar = ({context}) => {
                 <ul className="list-inline top-option-right">
                   <li><a href="#"><i className="icons-main question" /> FAQ</a></li>
                   <li><a href="#"><i className="icons-main contact-icon" /> {locStrings.contacts}</a></li>
-                  <li><a href="#" data-toggle="modal" data-target="#modal-reg"><i className="icons-main key" />
-                      {locStrings.registration}</a></li>
-                  <li><a href="#" data-toggle="modal" data-target="#modal-login"><i className="icons-main castle" />
-                    {locStrings.login}</a></li>
+                  <li>
+                    {authenticated
+                      ? <Link to="/cabinet"><i className="fa fa-user" /> {locStrings.myCabinet}</Link>
+                      : <a href="#" data-toggle="modal" data-target="#modal-reg"><i className="icons-main key" />{locStrings.registration}</a>
+                    }
+                  </li>
+                  <li>
+                    {authenticated
+                      ? <a href="#" onClick={() => Meteor.logout()}><i className="fa fa-sign-out" />{locStrings.logout}</a>
+                      : <a href="#" data-toggle="modal" data-target="#modal-login"><i className="icons-main castle" />{locStrings.login}</a>
+                    }
+                  </li>
                 </ul>
               </div>
             </div>
@@ -35,7 +42,6 @@ const topBar = ({context}) => {
         </div>
       </div>
       <RegistrationModal context={context} id="modal-reg"/>
-      <LoginModal context={context} id="modal-login"/>
     </Aux>
   );
 }

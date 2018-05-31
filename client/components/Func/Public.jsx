@@ -9,8 +9,7 @@ const public = ({loggingIn, authenticated, component, locStrings, ...rest}) => (
     { ...rest }
     render={ props => {
       if(loggingIn) return <div />
-      return !authenticated ?
-      (React.createElement(component, { ...props, locStrings, loggingIn, authenticated, })) : <Redirect to='/cabinet' />
+      return React.createElement(component, { ...props, locStrings, loggingIn, authenticated, })
     } }
   />
 );

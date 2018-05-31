@@ -1,1 +1,4 @@
 /* CSS declarations go here */
+.filter-card button {
+  margin-right: 5px;
+}
