@@ -90,6 +90,7 @@ export const locStrings = {
     priceTg: "Цена (тг)",
     status: "Статус",
     requiredFieldsValidation: "Заполните необходимые поля!",
+    multitripSchedule: "Расписание мультипоездки",
   },
   kz: {
     contacts: "Бізбен байланысыңыз",
@@ -180,6 +181,7 @@ export const locStrings = {
     priceTg: "Бағасы (тг)",
     status: "Күйі",
     requiredFieldsValidation: "Қажетті өрістерді толтырыңыз!",
+    multitripSchedule: "Көпжақты сапар кестесі",
   },
   en: {
     contacts: "Contacts",
@@ -270,5 +272,6 @@ export const locStrings = {
     priceTg: "Price (tg)",
     status: "Status",
     requiredFieldsValidation: "Fill in the required fields!",
+    multitripSchedule: "Multitrip schedule",
   }
 }

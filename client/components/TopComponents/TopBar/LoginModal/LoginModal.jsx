@@ -6,9 +6,11 @@ const loginModal = ({id, locStrings, context}) => (
   <div className="modal fade" id={id} tabIndex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
     <div className="modal-dialog" role="document">
       <div className="modal-content">
-        <form
+        {context.props.loggingIn
+          ? <div className="loader">Loading...</div>
+          : <form
           action="#"
-          onSubmit={context.formSubmitHandler.bind(context)}>
+          onSubmit={context.signIn.bind(context)}>
           <div className="modal-header">
             <h4 className="modal-title" id="gridSystemModalLabel">{locStrings.login}</h4>
             <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -45,7 +47,7 @@ const loginModal = ({id, locStrings, context}) => (
           <div className="modal-footer">
             <button type="submit" className="btn btn-success btn-block">{locStrings.login}</button>
           </div>
-        </form>
+        </form>}
       </div>{/* /.modal-content */}
     </div>{/* /.modal-dialog */}
   </div>

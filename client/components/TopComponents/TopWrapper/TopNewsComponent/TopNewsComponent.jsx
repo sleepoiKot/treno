@@ -4,14 +4,14 @@ import TopMenu from '../TopMenu/TopMenu'
 
 import Aux from '/client/hoc/Aux/Aux'
 
-const topCabinetComponents = (props) => (
-  <div className="header-settings cabinet-bg">
+const topNewsComponent = (props) => (
+  <div className="header-settings news-bg">
     <TopMenu {...props} />
     <div className="header-tabs">
       <div className="stable-center">
         <div className="news-title text-center">
-          <h1>{props.locStrings.cabinet}</h1>
-          <h3>{props.locStrings.cabinetMessage}</h3>
+          <h1>{props.locStrings.news}</h1>
+          <h3>{props.locStrings.newsMessage}</h3>
           <hr />
         </div>
       </div>
@@ -19,4 +19,4 @@ const topCabinetComponents = (props) => (
   </div>
 );
 
-export default topCabinetComponents;
+export default topNewsComponent;

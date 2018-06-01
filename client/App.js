@@ -13,6 +13,7 @@ import Footer from './components/Footer/Footer'
 
 import CabinetContainer from './containers/cabinet/CabinetContainer/CabinetContainer'
 import HomeContainer from './containers/pages/HomeContainer/HomeContainer'
+import MultitripContainer from './containers/pages/MultitripContainer/MultitripContainer'
 import NewsContainer from './containers/pages/NewsContainer/NewsContainer'
 
 import LoginModal from '/client/components/TopComponents/TopBar/LoginModal/LoginModal'
@@ -32,7 +33,7 @@ class App extends Component {
     this.state = initialState
   }
 
-  formSubmitHandler(e) {
+  signIn(e) {
     e.preventDefault()
 
     const { locStrings } = this.props
@@ -85,6 +86,7 @@ class App extends Component {
         <Switch>
           <Public exact path="/" component={ HomeContainer } {...props} />
           <Public exact path="/news" component={ NewsContainer } {...props} />
+          <Public exact path="/trip/multitrip" component={ MultitripContainer } {...props} />
           <Redirect to="/" />
         </Switch>
         <Public path="/" component={ Footer } {...props} />
@@ -100,6 +102,7 @@ class App extends Component {
           <Switch>
             <Public exact path="/" component={ HomeContainer } {...props} />
             <Public exact path="/news" component={ NewsContainer } {...props} />
+            <Public exact path="/trip/multitrip" component={ MultitripContainer } {...props} />
             <Authenticated path="/cabinet" component={ CabinetContainer } {...props}/>
             <Redirect to="/" />
           </Switch>
@@ -126,10 +129,12 @@ export default withTracker(() => {
 
   const loggingIn = Meteor.loggingIn()
   const userId = Meteor.userId()
+  const user = Meteor.user()
 
   return {
     locStrings: locStrings[lang],
     loggingIn,
     authenticated: !loggingIn && !!userId,
+    user
   }
 })(App);

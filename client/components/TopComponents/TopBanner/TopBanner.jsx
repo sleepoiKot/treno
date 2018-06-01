@@ -7,7 +7,7 @@ const topBanner = (props) => (
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="row">
             <div className="col-lg-2 col-md-2 col-sm-12">
-              <img src="assets/img/logo.png" alt="logo treno" />
+              <img src="/assets/img/logo.png" alt="logo treno" />
             </div>
             <div className="col-lg-8 col-md-8 col-sm-12">
               <div className="row">
@@ -18,7 +18,7 @@ const topBanner = (props) => (
             </div>
             <div className="col-lg-2 col-md-2 col-sm-12">
               <div className="payment">
-                <img src="assets/img/payment.png" alt="payment" />
+                <img src="/assets/img/payment.png" alt="payment" />
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import TopMenu from '../TopMenu/TopMenu'
 import GetTicket from './GetTicket/GetTicket'
 import Slides from './Slides/Slides'
 
-const topHomeComponents = (props) => (
+const topHomeComponent = (props) => (
   <div className="header-settings">
     <TopMenu {...props} />
     <div className="header-tabs">
@@ -20,4 +20,4 @@ const topHomeComponents = (props) => (
   </div>
 );
 
-export default topHomeComponents;
+export default topHomeComponent;

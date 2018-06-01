@@ -20,7 +20,7 @@ const topMenu = (props) => (
             <li className={props.location.pathname === "/suburbanTravel" ? "nav-item active" : "nav-item"}>
               <a className="nav-link text-uppercase" href="#">{props.locStrings.suburbanTravel}</a>
             </li>
-            <li className={props.location.pathname === "/dicsounts" ? "nav-item active" : "nav-item"}>
+            <li className={props.location.pathname === "/discounts" ? "nav-item active" : "nav-item"}>
               <a className="nav-link text-uppercase" href="#">{props.locStrings.dicsounts}</a>
             </li>
             <li className={props.location.pathname === "/contacts" ? "nav-item active" : "nav-item"}>
